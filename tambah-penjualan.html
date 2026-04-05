@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Toko Kelontong - Tambah Penjualan</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: { families: ["Font Awesome 5 Solid","Font Awesome 5 Regular","Font Awesome 5 Brands","simple-line-icons"], urls: ["assets/css/fonts.min.css"] },
+        active: function () { sessionStorage.fonts = true; },
+      });
+    </script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <style>
+      .total-display {
+        background: linear-gradient(135deg, #1572E8, #6861CE);
+        color: white;
+        border-radius: 12px;
+        padding: 20px 24px;
+      }
+      .total-display .total-label { font-size: 14px; opacity: 0.85; margin-bottom: 4px; }
+      .total-display .total-amount { font-size: 28px; font-weight: 700; }
+      .form-control:focus { border-color: #1572E8; box-shadow: 0 0 0 0.2rem rgba(21,114,232,.15); }
+      .required-star { color: #F25961; }
+      #successAlert { display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+              <h2 class="text-light fw-bold">Toko Kelontong</h2>
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+              <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+            </div>
+            <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+          </div>
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item">
+                <a href="index.html"><i class="fas fa-home"></i><p>Dashboard</p></a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span>
+                <h4 class="text-section">Penjualan</h4>
+              </li>
+              <li class="nav-item active">
+                <a data-bs-toggle="collapse" href="#menuPenjualan" class="collapsed" aria-expanded="true">
+                  <i class="fas fa-shopping-cart"></i>
+                  <p>Data Penjualan</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse show" id="menuPenjualan">
+                  <ul class="nav nav-collapse">
+                    <li><a href="data-penjualan.html"><span class="sub-item">Daftar Penjualan</span></a></li>
+                    <li class="active"><a href="tambah-penjualan.html"><span class="sub-item">Tambah Penjualan</span></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo"><img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" /></a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+                <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+              </div>
+              <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+            </div>
+          </div>
+          <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+            <div class="container-fluid">
+              <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                <div class="input-group">
+                  <div class="input-group-prepend"><button type="submit" class="btn btn-search pe-1"><i class="fa fa-search search-icon"></i></button></div>
+                  <input type="text" placeholder="Search ..." class="form-control" />
+                </div>
+              </nav>
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <div class="avatar-sm"><img src="assets/img/potorafie.jpeg" alt="..." class="avatar-img rounded-circle" /></div>
+                    <span class="profile-username"><span class="op-7">Hi,</span><span class="fw-bold">Rafie</span></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li><div class="user-box"><div class="u-text"><h4>Admin Toko</h4><p class="text-muted">rafierahatmoko123@gmail.com</p></div></div></li>
+                      <li><div class="dropdown-divider"></div></li>
+                      <li><a class="dropdown-item" href="#">Keluar</a></li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h3 class="fw-bold mb-3">Tambah Penjualan</h3>
+                <h6 class="op-7 mb-2">Masukkan data transaksi penjualan baru</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="data-penjualan.html" class="btn btn-label-info btn-round">
+                  <i class="fa fa-list me-1"></i> Lihat Daftar
+                </a>
+              </div>
+            </div>
+
+            <!-- Success Alert -->
+            <div class="alert alert-success alert-dismissible fade show" id="successAlert" role="alert">
+              <i class="fa fa-check-circle me-2"></i>
+              <strong>Berhasil!</strong> Data penjualan <span id="savedItemName"></span> telah disimpan.
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-title"><i class="fas fa-plus-circle me-2 text-primary"></i>Form Tambah Penjualan</div>
+                  </div>
+                  <div class="card-body">
+
+                    <!-- ID Penjualan -->
+                    <div class="mb-3">
+                      <label class="form-label fw-semibold">
+                        ID Penjualan <span class="required-star">*</span>
+                      </label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-hashtag"></i></span>
+                        <input type="text" id="idPenjualan" class="form-control" placeholder="Auto-generate" readonly />
+                        <button class="btn btn-outline-secondary" type="button" onclick="generateID()" title="Generate ID baru">
+                          <i class="fas fa-sync-alt"></i>
+                        </button>
+                      </div>
+                      <small class="text-muted">ID dibuat otomatis, klik ikon refresh untuk generate ulang</small>
+                    </div>
+
+                    <!-- Nama Barang -->
+                    <div class="mb-3">
+                      <label class="form-label fw-semibold">
+                        Nama Barang <span class="required-star">*</span>
+                      </label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-box"></i></span>
+                        <input type="text" id="namaBarang" class="form-control" placeholder="Masukkan nama barang" list="barangSuggestions" />
+                      </div>
+                      <datalist id="barangSuggestions">
+                        <option value="Nasi Goreng">
+                        <option value="Mie Goreng">
+                        <option value="Soto Ayam">
+                        <option value="Rendang">
+                        <option value="Orek Tempe">
+                        <option value="Telur Ayam">
+                        <option value="Minyak Goreng">
+                        <option value="Gula Pasir">
+                        <option value="Tepung Terigu">
+                        <option value="Mie Instan">
+                        <option value="Kecap Manis">
+                        <option value="Beras 5kg">
+                      </datalist>
+                      <div class="invalid-feedback" id="namaBarangError">Nama barang wajib diisi</div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Jumlah -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                          Jumlah <span class="required-star">*</span>
+                        </label>
+                        <div class="input-group">
+                          <button class="btn btn-outline-secondary" type="button" onclick="changeJumlah(-1)"><i class="fas fa-minus"></i></button>
+                          <input type="number" id="jumlah" class="form-control text-center" value="1" min="1" max="9999" placeholder="0" />
+                          <button class="btn btn-outline-secondary" type="button" onclick="changeJumlah(1)"><i class="fas fa-plus"></i></button>
+                          <span class="input-group-text">unit</span>
+                        </div>
+                        <div class="invalid-feedback" id="jumlahError">Jumlah harus lebih dari 0</div>
+                      </div>
+
+                      <!-- Harga Satuan -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                          Harga Satuan <span class="required-star">*</span>
+                        </label>
+                        <div class="input-group">
+                          <span class="input-group-text">Rp</span>
+                          <input type="number" id="harga" class="form-control" value="" min="0" placeholder="0" />
+                        </div>
+                        <div class="text-muted small mt-1" id="hargaDisplay"></div>
+                        <div class="invalid-feedback" id="hargaError">Harga harus lebih dari 0</div>
+                      </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2 mt-4">
+                      <button type="button" class="btn btn-primary btn-round px-4" onclick="simpanData()">
+                        <i class="fa fa-save me-2"></i>Simpan
+                      </button>
+                      <button type="button" class="btn btn-secondary btn-round px-4" onclick="resetForm()">
+                        <i class="fa fa-undo me-2"></i>Reset
+                      </button>
+                      <a href="data-penjualan.html" class="btn btn-label-danger btn-round px-4">
+                        <i class="fa fa-times me-2"></i>Batal
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Panel -->
+              <div class="col-md-4">
+                <!-- Total Harga Card -->
+                <div class="card card-round mb-3">
+                  <div class="card-body p-0">
+                    <div class="total-display">
+                      <div class="total-label"><i class="fas fa-calculator me-1"></i> Total Harga (Otomatis)</div>
+                      <div class="total-amount" id="totalDisplay">Rp 0</div>
+                      <div class="mt-2" style="font-size:13px; opacity:0.8;">
+                        <span id="totalFormula">0 unit × Rp 0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="card card-round">
+                  <div class="card-header"><div class="card-title">Ringkasan Input</div></div>
+                  <div class="card-body">
+                    <table class="table table-sm mb-0">
+                      <tbody>
+                        <tr><td class="text-muted">ID Penjualan</td><td class="fw-semibold" id="sumId">-</td></tr>
+                        <tr><td class="text-muted">Nama Barang</td><td class="fw-semibold" id="sumNama">-</td></tr>
+                        <tr><td class="text-muted">Jumlah</td><td class="fw-semibold" id="sumJumlah">-</td></tr>
+                        <tr><td class="text-muted">Harga Satuan</td><td class="fw-semibold" id="sumHarga">-</td></tr>
+                        <tr class="table-primary"><td class="fw-bold">Total Harga</td><td class="fw-bold" id="sumTotal">-</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="card card-round mt-3">
+                  <div class="card-body">
+                    <h6 class="text-primary fw-bold"><i class="fas fa-info-circle me-1"></i>Petunjuk</h6>
+                    <ul class="text-muted small ps-3 mb-0">
+                      <li>ID otomatis dibuat oleh sistem</li>
+                      <li>Total harga dihitung otomatis</li>
+                      <li>Kolom <span class="text-danger">*</span> wajib diisi</li>
+                      <li>Klik <b>Simpan</b> untuk menyimpan data</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left"><ul class="nav"><li class="nav-item"><a class="nav-link" href="#">Toko Kelontong</a></li></ul></nav>
+            <div class="copyright">2024, Sistem Penjualan <i class="fa fa-heart heart text-danger"></i></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/js/kaiadmin.min.js"></script>
+    <script>
+      function generateID() {
+        const existing = JSON.parse(localStorage.getItem('salesData')) || [];
+        const maxNum = existing.reduce((max, item) => {
+          const num = parseInt(item.id.replace('TRS', '')) || 0;
+          return num > max ? num : max;
+        }, 0);
+        const newNum = String(maxNum + 1).padStart(3, '0');
+        document.getElementById('idPenjualan').value = 'TRS' + newNum;
+        updateSummary();
+      }
+
+      function formatRupiah(angka) {
+        return 'Rp ' + Number(angka).toLocaleString('id-ID');
+      }
+
+      function hitungTotal() {
+        const jumlah = parseInt(document.getElementById('jumlah').value) || 0;
+        const harga = parseInt(document.getElementById('harga').value) || 0;
+        const total = jumlah * harga;
+        document.getElementById('totalDisplay').textContent = formatRupiah(total);
+        document.getElementById('totalFormula').textContent = jumlah + ' unit × ' + formatRupiah(harga);
+        return total;
+      }
+
+      function updateSummary() {
+        const id = document.getElementById('idPenjualan').value || '-';
+        const nama = document.getElementById('namaBarang').value || '-';
+        const jumlah = document.getElementById('jumlah').value || '0';
+        const harga = parseInt(document.getElementById('harga').value) || 0;
+        const total = hitungTotal();
+
+        document.getElementById('sumId').textContent = id;
+        document.getElementById('sumNama').textContent = nama;
+        document.getElementById('sumJumlah').textContent = jumlah + ' unit';
+        document.getElementById('sumHarga').textContent = harga > 0 ? formatRupiah(harga) : '-';
+        document.getElementById('sumTotal').textContent = formatRupiah(total);
+        document.getElementById('hargaDisplay').textContent = harga > 0 ? '= ' + formatRupiah(harga) : '';
+      }
+
+      function changeJumlah(delta) {
+        const input = document.getElementById('jumlah');
+        const val = Math.max(1, (parseInt(input.value) || 0) + delta);
+        input.value = val;
+        updateSummary();
+      }
+
+      function validateForm() {
+        let valid = true;
+        const nama = document.getElementById('namaBarang').value.trim();
+        const jumlah = parseInt(document.getElementById('jumlah').value);
+        const harga = parseInt(document.getElementById('harga').value);
+
+        document.getElementById('namaBarang').classList.remove('is-invalid');
+        document.getElementById('jumlah').classList.remove('is-invalid');
+        document.getElementById('harga').classList.remove('is-invalid');
+
+        if (!nama) { document.getElementById('namaBarang').classList.add('is-invalid'); valid = false; }
+        if (!jumlah || jumlah < 1) { document.getElementById('jumlah').classList.add('is-invalid'); valid = false; }
+        if (!harga || harga < 1) { document.getElementById('harga').classList.add('is-invalid'); valid = false; }
+
+        return valid;
+      }
+
+      function simpanData() {
+        if (!validateForm()) return;
+
+        const newData = {
+          id: document.getElementById('idPenjualan').value,
+          tanggal: new Date().toISOString().split('T')[0],
+          namaBarang: document.getElementById('namaBarang').value.trim(),
+          jumlah: parseInt(document.getElementById('jumlah').value),
+          harga: parseInt(document.getElementById('harga').value),
+        };
+
+        let salesData = JSON.parse(localStorage.getItem('salesData')) || [];
+        salesData.push(newData);
+        localStorage.setItem('salesData', JSON.stringify(salesData));
+
+        // Show success
+        document.getElementById('savedItemName').textContent = '"' + newData.namaBarang + '"';
+        const alert = document.getElementById('successAlert');
+        alert.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Reset and generate new ID
+        resetForm();
+
+        // Auto hide after 4s
+        setTimeout(() => { alert.style.display = 'none'; }, 4000);
+      }
+
+      function resetForm() {
+        document.getElementById('namaBarang').value = '';
+        document.getElementById('jumlah').value = 1;
+        document.getElementById('harga').value = '';
+        document.getElementById('namaBarang').classList.remove('is-invalid');
+        document.getElementById('jumlah').classList.remove('is-invalid');
+        document.getElementById('harga').classList.remove('is-invalid');
+        generateID();
+        updateSummary();
+      }
+
+      // Event listeners
+      document.getElementById('jumlah').addEventListener('input', updateSummary);
+      document.getElementById('harga').addEventListener('input', updateSummary);
+      document.getElementById('namaBarang').addEventListener('input', updateSummary);
+
+      // Init
+      generateID();
+      updateSummary();
+    </script>
+  </body>
+</html>

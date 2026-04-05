@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Toko Kelontong - Data Penjualan</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: { families: ["Font Awesome 5 Solid","Font Awesome 5 Regular","Font Awesome 5 Brands","simple-line-icons"], urls: ["assets/css/fonts.min.css"] },
+        active: function () { sessionStorage.fonts = true; },
+      });
+    </script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+              <h2 class="text-light fw-bold">Toko Kelontong</h2>
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+              <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+            </div>
+            <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+          </div>
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item">
+                <a href="index.html"><i class="fas fa-home"></i><p>Dashboard</p></a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span>
+                <h4 class="text-section">Penjualan</h4>
+              </li>
+              <li class="nav-item active">
+                <a data-bs-toggle="collapse" href="#menuPenjualan" class="collapsed" aria-expanded="true">
+                  <i class="fas fa-shopping-cart"></i>
+                  <p>Data Penjualan</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse show" id="menuPenjualan">
+                  <ul class="nav nav-collapse">
+                    <li class="active"><a href="data-penjualan.html"><span class="sub-item">Daftar Penjualan</span></a></li>
+                    <li><a href="tambah-penjualan.html"><span class="sub-item">Tambah Penjualan</span></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo"><img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" /></a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+                <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+              </div>
+              <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+            </div>
+          </div>
+          <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+            <div class="container-fluid">
+              <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                <div class="input-group">
+                  <div class="input-group-prepend"><button type="submit" class="btn btn-search pe-1"><i class="fa fa-search search-icon"></i></button></div>
+                  <input type="text" placeholder="Search ..." class="form-control" />
+                </div>
+              </nav>
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <div class="avatar-sm"><img src="assets/img/potorafie.jpeg" alt="..." class="avatar-img rounded-circle" /></div>
+                    <span class="profile-username"><span class="op-7">Hi,</span><span class="fw-bold">Rafie</span></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li><div class="user-box"><div class="u-text"><h4>Admin Toko</h4><p class="text-muted">rafierahatmoko123@gmail.com</p></div></div></li>
+                      <li><div class="dropdown-divider"></div></li>
+                      <li><a class="dropdown-item" href="#">Keluar</a></li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h3 class="fw-bold mb-3">Data Penjualan</h3>
+                <h6 class="op-7 mb-2">Daftar seluruh transaksi penjualan</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="tambah-penjualan.html" class="btn btn-primary btn-round">
+                  <i class="fa fa-plus me-1"></i> Tambah Penjualan
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Daftar Penjualan</div>
+                      <div class="card-tools d-flex gap-2">
+                        <!-- Search Filter -->
+                        <div class="input-group" style="width: 220px;">
+                          <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Cari nama barang..." />
+                        </div>
+                        <!-- Date Filter -->
+                        <input type="date" id="dateFilter" class="form-control form-control-sm" style="width:160px;" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table align-items-center mb-0" id="salesTable">
+                        <thead class="thead-light">
+                          <tr>
+                            <th>No</th>
+                            <th>ID Penjualan</th>
+                            <th>Tanggal</th>
+                            <th>Nama Barang</th>
+                            <th class="text-center">Jumlah</th>
+                            <th class="text-end">Harga Satuan</th>
+                            <th class="text-end">Total Harga</th>
+                            <th class="text-center">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                        <tfoot>
+                          <tr class="bg-light">
+                            <td colspan="6" class="text-end fw-bold">Total Keseluruhan:</td>
+                            <td class="text-end fw-bold" id="grandTotal">Rp 0</td>
+                            <td></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-between align-items-center px-3 py-2">
+                      <div class="text-muted small" id="paginationInfo">Menampilkan 0 data</div>
+                      <nav>
+                        <ul class="pagination pagination-sm mb-0" id="pagination"></ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left"><ul class="nav"><li class="nav-item"><a class="nav-link" href="#">Toko Kelontong</a></li></ul></nav>
+            <div class="copyright">2026, Sistem Penjualan <i class="fa fa-heart heart text-danger"></i></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Konfirmasi Hapus</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah Anda yakin ingin menghapus data penjualan <strong id="deleteItemName"></strong>?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-danger" id="confirmDelete">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/js/kaiadmin.min.js"></script>
+    <script>
+      // Sample data - in real app this would come from backend
+      let salesData = JSON.parse(localStorage.getItem('salesData')) || [
+        { id: 'TRS001', tanggal: '2026-04-01', namaBarang: 'Nasi Goreng', jumlah: 2, harga: 20000 },
+        { id: 'TRS002', tanggal: '2026-04-01', namaBarang: 'Rendang', jumlah: 2, harga: 15000 },
+        { id: 'TRS003', tanggal: '2026-04-02', namaBarang: 'Soto Ayam', jumlah: 2, harga: 10000 },
+        { id: 'TRS004', tanggal: '2026-04-02', namaBarang: 'Orek Tempe', jumlah: 3, harga: 2500 },
+        { id: 'TRS005', tanggal: '2026-04-03', namaBarang: 'Mie Instan', jumlah: 5, harga: 3500 },
+        { id: 'TRS006', tanggal: '2026-04-03', namaBarang: 'Telur Ayam', jumlah: 12, harga: 2500 },
+        { id: 'TRS007', tanggal: '2026-04-04', namaBarang: 'Minyak Goreng', jumlah: 1, harga: 24000 },
+        { id: 'TRS008', tanggal: '2026-04-05', namaBarang: 'Gula Pasir', jumlah: 2, harga: 14000 },
+      ];
+
+      const rowsPerPage = 5;
+      let currentPage = 1;
+      let filteredData = [...salesData];
+      let deleteIndex = -1;
+
+      function formatRupiah(angka) {
+        return 'Rp ' + angka.toLocaleString('id-ID');
+      }
+
+      function formatTanggal(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit', year: 'numeric' });
+      }
+
+      function renderTable() {
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageData = filteredData.slice(start, end);
+        const tbody = document.getElementById('tableBody');
+
+        if (pageData.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" class="text-center py-4 text-muted">Tidak ada data penjualan</td></tr>';
+        } else {
+          tbody.innerHTML = pageData.map((item, i) => {
+            const totalHarga = item.jumlah * item.harga;
+            const globalIndex = salesData.findIndex(d => d.id === item.id);
+            return `<tr>
+              <td>${start + i + 1}</td>
+              <td><span class="fw-bold text-primary">${item.id}</span></td>
+              <td>${formatTanggal(item.tanggal)}</td>
+              <td>${item.namaBarang}</td>
+              <td class="text-center">${item.jumlah}</td>
+              <td class="text-end">${formatRupiah(item.harga)}</td>
+              <td class="text-end fw-bold">${formatRupiah(totalHarga)}</td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-danger" onclick="hapusData(${globalIndex}, '${item.namaBarang}')">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>`;
+          }).join('');
+        }
+
+        // Grand total
+        const total = filteredData.reduce((sum, item) => sum + (item.jumlah * item.harga), 0);
+        document.getElementById('grandTotal').textContent = formatRupiah(total);
+
+        // Pagination info
+        document.getElementById('paginationInfo').textContent =
+          `Menampilkan ${Math.min(start + 1, filteredData.length)}–${Math.min(end, filteredData.length)} dari ${filteredData.length} data`;
+
+        renderPagination();
+      }
+
+      function renderPagination() {
+        const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+        const ul = document.getElementById('pagination');
+        ul.innerHTML = '';
+
+        if (totalPages <= 1) return;
+
+        ul.innerHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+          <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">«</a></li>`;
+
+        for (let i = 1; i <= totalPages; i++) {
+          ul.innerHTML += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`;
+        }
+
+        ul.innerHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+          <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">»</a></li>`;
+      }
+
+      function changePage(page) {
+        const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+        if (page < 1 || page > totalPages) return;
+        currentPage = page;
+        renderTable();
+        return false;
+      }
+
+      function hapusData(index, nama) {
+        deleteIndex = index;
+        document.getElementById('deleteItemName').textContent = nama;
+        new bootstrap.Modal(document.getElementById('deleteModal')).show();
+      }
+
+      document.getElementById('confirmDelete').addEventListener('click', function() {
+        if (deleteIndex > -1) {
+          salesData.splice(deleteIndex, 1);
+          localStorage.setItem('salesData', JSON.stringify(salesData));
+          applyFilter();
+          bootstrap.Modal.getInstance(document.getElementById('deleteModal')).hide();
+          deleteIndex = -1;
+        }
+      });
+
+      function applyFilter() {
+        const search = document.getElementById('searchInput').value.toLowerCase();
+        const dateVal = document.getElementById('dateFilter').value;
+        filteredData = salesData.filter(item => {
+          const matchSearch = item.namaBarang.toLowerCase().includes(search) || item.id.toLowerCase().includes(search);
+          const matchDate = dateVal ? item.tanggal === dateVal : true;
+          return matchSearch && matchDate;
+        });
+        currentPage = 1;
+        renderTable();
+      }
+
+      document.getElementById('searchInput').addEventListener('input', applyFilter);
+      document.getElementById('dateFilter').addEventListener('change', applyFilter);
+
+      renderTable();
+    </script>
+  </body>
+</html>

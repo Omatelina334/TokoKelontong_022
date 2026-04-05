@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Toko Kelontong - Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: { families: ["Font Awesome 5 Solid","Font Awesome 5 Regular","Font Awesome 5 Brands","simple-line-icons"], urls: ["assets/css/fonts.min.css"] },
+        active: function () { sessionStorage.fonts = true; },
+      });
+    </script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <div class="logo-header" data-background-color="light">
+            <a href="index.html" class="logo">
+              <h2 class="text-light fw-bold">Toko Kelontong</h2>
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+              <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+            </div>
+            <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+          </div>
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a href="index.html">
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span>
+                <h4 class="text-section">Penjualan</h4>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#menuPenjualan">
+                  <i class="fas fa-shopping-cart"></i>
+                  <p>Data Penjualan</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="menuPenjualan">
+                  <ul class="nav nav-collapse">
+                    <li><a href="data-penjualan.html"><span class="sub-item">Daftar Penjualan</span></a></li>
+                    <li><a href="tambah-penjualan.html"><span class="sub-item">Tambah Penjualan</span></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo"><img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" /></a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+                <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+              </div>
+              <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+            </div>
+          </div>
+          <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+            <div class="container-fluid">
+              <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                <div class="input-group">
+                  <div class="input-group-prepend"><button type="submit" class="btn btn-search pe-1"><i class="fa fa-search search-icon"></i></button></div>
+                  <input type="text" placeholder="Search ..." class="form-control" />
+                </div>
+              </nav>
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i><span class="notification">3</span>
+                  </a>
+                  <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                    <li><div class="dropdown-title">3 Notifikasi Baru</div></li>
+                    <li><div class="notif-scroll scrollbar-outer"><div class="notif-center">
+                      <a href="#"><div class="notif-icon notif-success"><i class="fa fa-shopping-bag"></i></div><div class="notif-content"><span class="block">Penjualan baru masuk</span><span class="time">5 menit lalu</span></div></a>
+                      <a href="#"><div class="notif-icon notif-warning"><i class="fa fa-exclamation-triangle"></i></div><div class="notif-content"><span class="block">Stok barang menipis</span><span class="time">1 jam lalu</span></div></a>
+                      <a href="#"><div class="notif-icon notif-primary"><i class="fa fa-chart-line"></i></div><div class="notif-content"><span class="block">Laporan bulan siap</span><span class="time">2 jam lalu</span></div></a>
+                    </div></div></li>
+                    <li><a class="see-all" href="javascript:void(0);">Lihat semua<i class="fa fa-angle-right"></i></a></li>
+                  </ul>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <div class="avatar-sm"><img src="assets/img/potorafie.jpeg" alt="..." class="avatar-img rounded-circle" /></div>
+                    <span class="profile-username"><span class="op-7">Hi,</span><span class="fw-bold">Rafie</span></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li><div class="user-box"><div class="u-text"><h4>Admin Toko</h4><p class="text-muted">rafierahatmoko123@gmail.com.com</p></div></div></li>
+                      <li><div class="dropdown-divider"></div></li>
+                      <li><a class="dropdown-item" href="#">Keluar</a></li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h3 class="fw-bold mb-3">Dashboard</h3>
+                <h6 class="op-7 mb-2">Selamat datang di Sistem Penjualan Toko Kelontong</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="tambah-penjualan.html" class="btn btn-primary btn-round"><i class="fa fa-plus me-1"></i> Tambah Penjualan</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body"><div class="row align-items-center">
+                    <div class="col-icon"><div class="icon-big text-center icon-primary bubble-shadow-small"><i class="fas fa-money-bill-wave"></i></div></div>
+                    <div class="col col-stats ms-3 ms-sm-0"><div class="numbers"><p class="card-category">Total Penjualan (IDR)</p><h4 class="card-title" id="valTotalPenjualan">Rp 0</h4></div></div>
+                  </div></div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body"><div class="row align-items-center">
+                    <div class="col-icon"><div class="icon-big text-center icon-success bubble-shadow-small"><i class="fas fa-shopping-bag"></i></div></div>
+                    <div class="col col-stats ms-3 ms-sm-0"><div class="numbers"><p class="card-category">Total Transaksi</p><h4 class="card-title" id="valTotalTransaksi">0</h4></div></div>
+                  </div></div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body"><div class="row align-items-center">
+                    <div class="col-icon"><div class="icon-big text-center icon-info bubble-shadow-small"><i class="fas fa-box"></i></div></div>
+                    <div class="col col-stats ms-3 ms-sm-0"><div class="numbers"><p class="card-category">Barang Terjual</p><h4 class="card-title" id="valBarangTerjual">0 unit</h4></div></div>
+                  </div></div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body"><div class="row align-items-center">
+                    <div class="col-icon"><div class="icon-big text-center icon-warning bubble-shadow-small"><i class="fas fa-chart-line"></i></div></div>
+                    <div class="col col-stats ms-3 ms-sm-0"><div class="numbers"><p class="card-category">Rata-rata/Hari</p><h4 class="card-title" id="valRataRata">Rp 0</h4></div></div>
+                  </div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Grafik Penjualan Bulanan</div>
+                      <div class="card-tools"><span class="badge badge-success">Tahun 2026</span></div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 300px"><canvas id="monthlySalesChart"></canvas></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-round">
+                  <div class="card-header"><div class="card-title">Kategori Terlaris</div></div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 300px"><canvas id="categoryChart"></canvas></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-7">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Penjualan Minggu Ini</div>
+                      <div class="card-tools"><span class="badge badge-primary">Per Hari</span></div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 250px"><canvas id="weeklyChart"></canvas></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="card card-round">
+                  <div class="card-header"><div class="card-title">Produk Terlaris</div></div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table align-items-center mb-0">
+                        <thead class="thead-light"><tr><th>Produk</th><th class="text-center">Terjual</th><th class="text-end">Pendapatan</th></tr></thead>
+                        <tbody>
+                          <tr><td>Nasi Goreng</td><td class="text-center"><span class="badge badge-primary">48</span></td><td class="text-end">Rp 960.000</td></tr>
+                          <tr><td>Telur Ayam</td><td class="text-center"><span class="badge badge-warning">36</span></td><td class="text-end">Rp 540.000</td></tr>
+                          <tr><td>Mie Instan</td><td class="text-center"><span class="badge badge-warning">29</span></td><td class="text-end">Rp 203.000</td></tr>
+                          <tr><td>Minyak Goreng</td><td class="text-center"><span class="badge badge-warning">24</span></td><td class="text-end">Rp 576.000</td></tr>
+                          <tr><td>Gula Pasir</td><td class="text-center"><span class="badge badge-warning">18</span></td><td class="text-end">Rp 252.000</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Transaksi Terbaru</div>
+                      <div class="card-tools"><a href="data-penjualan.html" class="btn btn-sm btn-primary btn-round">Lihat Semua</a></div>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table align-items-center mb-0">
+                        <thead class="thead-light"><tr><th>ID</th><th>Tanggal</th><th>Nama Barang</th><th class="text-center">Jumlah</th><th class="text-end">Total Harga</th><th class="text-center">Status</th></tr></thead>
+                        <tbody id="tabelTransaksiTerbaru">
+                          </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left"><ul class="nav"><li class="nav-item"><a class="nav-link" href="#">Toko Kelontong</a></li></ul></nav>
+            <div class="copyright">2026, Sistem Penjualan <i class="fa fa-heart heart text-danger"></i></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="assets/js/kaiadmin.min.js"></script>
+    <script>
+      // ==========================================
+      // INTEGRASI DATA LOGIS (YTD - Year to Date)
+      // ==========================================
+      
+      let salesData = JSON.parse(localStorage.getItem('salesData')) || [
+        { id: 'TRS001', tanggal: '2026-04-01', namaBarang: 'Nasi Goreng', jumlah: 2, harga: 20000 },
+        { id: 'TRS002', tanggal: '2026-04-01', namaBarang: 'Rendang', jumlah: 2, harga: 15000 },
+        { id: 'TRS003', tanggal: '2026-04-02', namaBarang: 'Soto Ayam', jumlah: 2, harga: 10000 },
+        { id: 'TRS004', tanggal: '2026-04-02', namaBarang: 'Orek Tempe', jumlah: 3, harga: 2500 },
+        { id: 'TRS005', tanggal: '2026-04-03', namaBarang: 'Mie Instan', jumlah: 5, harga: 3500 },
+        { id: 'TRS006', tanggal: '2026-04-03', namaBarang: 'Telur Ayam', jumlah: 12, harga: 2500 },
+        { id: 'TRS007', tanggal: '2026-04-04', namaBarang: 'Minyak Goreng', jumlah: 1, harga: 24000 },
+        { id: 'TRS008', tanggal: '2026-04-05', namaBarang: 'Gula Pasir', jumlah: 2, harga: 14000 },
+      ];
+
+      function formatRupiahData(angka) {
+        return 'Rp ' + angka.toLocaleString('id-ID');
+      }
+
+      function formatTanggalData(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit', year: 'numeric' });
+      }
+
+      // 1. Tentukan batas waktu realistis (Hari ini)
+      const today = new Date();
+      const currentMonthIndex = today.getMonth(); // 0 = Jan, 3 = Apr, dst.
+      
+      // 2. Base historis mockup (Jan - Des)
+      let fullMonthlyBase = [2800000, 3200000, 2950000, 3903000, 3800000, 4250000, 3900000, 4500000, 4100000, 5000000, 4700000, 5500000];
+      
+      // 3. LOGIKA PEMOTONGAN GRAFIK: Jadikan bulan di masa depan sebagai 'null'
+      let monthlyData = fullMonthlyBase.map((val, index) => {
+        return index <= currentMonthIndex ? val : null; 
+      });
+
+      // Hapus data bawaan dari base bulan berjalan agar tidak double-count
+      // (asumsi data bawaan array berjumlah 197.000 terjadi di bulan April)
+      if (monthlyData[3] !== null) {
+          monthlyData[3] -= 197000;
+      }
+
+      let categoryData = [111, 85, 51, 42, 24]; 
+      let weeklyData = [320000, 285000, 340000, 347500, 442500, 596000, 552000];
+
+      let currentItems = 0;
+      let currentTrx = salesData.length;
+
+      // Iterasi seluruh data penjualan untuk dimasukkan ke chart & statistik
+      salesData.forEach(item => {
+        const date = new Date(item.tanggal);
+        const month = date.getMonth(); 
+        const dayIndex = date.getDay() === 0 ? 6 : date.getDay() - 1; 
+        const revenue = item.jumlah * item.harga;
+        
+        currentItems += item.jumlah;
+
+        // Distribusi Chart Bulanan (Jika ada input di masa depan, null akan diinisialisasi jadi 0)
+        if(!isNaN(month)) {
+            if (monthlyData[month] === null) monthlyData[month] = 0;
+            monthlyData[month] += revenue;
+        }
+        
+        // Distribusi Chart Mingguan
+        if(!isNaN(dayIndex)) weeklyData[dayIndex] += revenue;
+        
+        // Distribusi Chart Kategori
+        const name = item.namaBarang.toLowerCase();
+        if(/nasi|mie|soto|rendang|orek|ayam/.test(name) && !name.includes('telur')) {
+            categoryData[0] += item.jumlah;
+        } else if (/es|kopi|teh|susu|air|minuman/.test(name)) {
+            categoryData[1] += item.jumlah;
+        } else if (/kecap|garam|sambal|saus|bumbu|merica/.test(name)) {
+            categoryData[2] += item.jumlah;
+        } else if (/minyak|beras|telur|gula|tepung/.test(name)) {
+            categoryData[3] += item.jumlah;
+        } else {
+            categoryData[4] += item.jumlah;
+        }
+      });
+
+      function syncDashboardData() {
+        // Kalkulasi logis Total Penjualan (Hanya menjumlahkan bulan yang valid/sudah terlewati)
+        const totalRevenue = monthlyData.reduce((sum, val) => sum + (val || 0), 0);
+        
+        // Kalkulasi historis untuk item & transaksi
+        const baseItems = 342 - 29; 
+        const baseTrx = 128 - 8;
+        const totalItems = baseItems + currentItems;
+        const totalTrx = baseTrx + currentTrx;
+        
+        // Kalkulasi Rata-rata/Hari (Berdasarkan jumlah hari yang sudah terlewati di tahun berjalan)
+        const startOfYear = new Date(today.getFullYear(), 0, 1);
+        const daysPassed = Math.ceil((today - startOfYear) / (1000 * 60 * 60 * 24)) || 1;
+        const rataRata = Math.round(totalRevenue / daysPassed);
+
+        // Update Stat Cards UI
+        document.getElementById('valTotalPenjualan').textContent = formatRupiahData(totalRevenue);
+        document.getElementById('valTotalTransaksi').textContent = totalTrx;
+        document.getElementById('valBarangTerjual').textContent = totalItems + ' unit';
+        document.getElementById('valRataRata').textContent = formatRupiahData(rataRata);
+
+        // Update Tabel Transaksi Terbaru (5 data terakhir)
+        const tbody = document.getElementById('tabelTransaksiTerbaru');
+        const recentSales = [...salesData].reverse().slice(0, 5);
+
+        if(recentSales.length === 0) {
+           tbody.innerHTML = '<tr><td colspan="6" class="text-center py-4 text-muted">Belum ada transaksi terbaru</td></tr>';
+        } else {
+           tbody.innerHTML = recentSales.map(item => {
+             const totalHarga = item.jumlah * item.harga;
+             return `<tr>
+               <td><b>${item.id}</b></td>
+               <td>${formatTanggalData(item.tanggal)}</td>
+               <td>${item.namaBarang}</td>
+               <td class="text-center">${item.jumlah}</td>
+               <td class="text-end">${formatRupiahData(totalHarga)}</td>
+               <td class="text-center"><span class="badge badge-success">Selesai</span></td>
+             </tr>`;
+           }).join('');
+        }
+      }
+
+      // Panggil fungsi sinkronisasi teks/tabel
+      syncDashboardData();
+
+      // ==========================================
+      // RENDER CHARTS
+      // ==========================================
+      
+      // Monthly Sales Chart
+      // Karena nilai setelah bulan ini adalah null, garis pada chart otomatis akan berhenti/terpotong
+      new Chart(document.getElementById('monthlySalesChart'), {
+        type: 'line',
+        data: {
+          labels: ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'],
+          datasets: [{ 
+            label: 'Penjualan (Rp)', 
+            data: monthlyData, 
+            borderColor: '#1572E8', 
+            backgroundColor: 'rgba(21,114,232,0.1)', 
+            borderWidth: 2, 
+            fill: true, 
+            tension: 0.4 
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false, 
+          plugins: { legend: { position: 'top' } }, 
+          scales: { y: { ticks: { callback: function(v) { return 'Rp '+(v/1000000).toFixed(1)+'jt'; } } } } 
+        }
+      });
+
+      // Category Doughnut
+      new Chart(document.getElementById('categoryChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Makanan','Minuman','Bumbu','Kebutuhan Pokok','Lainnya'],
+          datasets: [{ 
+            data: categoryData, 
+            backgroundColor: ['#1572E8','#6861CE','#48ABF7','#F25961','#31CE36'] 
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false, 
+          plugins: { legend: { position: 'bottom' } } 
+        }
+      });
+
+      // Weekly Bar
+      new Chart(document.getElementById('weeklyChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'],
+          datasets: [{ 
+            label: 'Penjualan', 
+            data: weeklyData, 
+            backgroundColor: ['#1572E8','#6861CE','#48ABF7','#F25961','#31CE36','#FFAD46','#1572E8'], 
+            borderRadius: 5 
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false, 
+          plugins: { legend: { display: false } }, 
+          scales: { y: { ticks: { callback: function(v) { return 'Rp '+(v/1000)+'rb'; } } } } 
+        }
+      });
+    </script>
+  </body>
+</html>
